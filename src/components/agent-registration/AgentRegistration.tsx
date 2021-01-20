@@ -1,37 +1,35 @@
-import React, { FC } from 'react';
-import { Typography } from 'antd';
-import { CheckCircleOutlined } from '@ant-design/icons';
+import React, { FC, useState } from 'react';
+import { Typography, Tabs } from 'antd';
 
+import TabIcon from './TabIcon';
 import './AgentRegistration.less';
+
+const keys = [
+    { id: '1', title: 'Personal Details' },
+    { id: '2', title: 'Agency Details' },
+    { id: '3', title: 'Contact Person Details' },
+    { id: '4', title: 'Work Order' }
+];
 
 const AgentRegistration: FC = () => {
     const { Title } = Typography;
+    const { TabPane } = Tabs;
+
+    const [key, setKey] = useState('1');
     return (
         <>
             <Title className="heading" level={2}>
                 Agent Registration
             </Title>
             <div className="details">
-                <div className="details__item">
-                    <CheckCircleOutlined className="details__item--icon" />
-                    <Title className="details__item--title" level={5}>
-                        Personal Details
-                    </Title>
-                </div>
-                <div className="details__item details__item__active">
-                    <CheckCircleOutlined className="details__item--icon" />
-                    <Title className="details__item--title" level={5}>
-                        Agency Details
-                    </Title>
-                </div>
-                <div className="details__item">
-                    <span className="details__item--circle">&#9675;</span>
-                    <label className="details__item--label">Person Details</label>
-                </div>
-                <div className="details__item">
-                    <span className="details__item--circle">&#9675;</span>
-                    <label className="details__item--label">Work Order Scope</label>
-                </div>
+                <Tabs defaultActiveKey={key} className="details__tabs" onChange={(k) => setKey(k)}>
+                    {keys.map((el) => (
+                        <TabPane
+                            key={el.id}
+                            tab={<TabIcon tabKey={el.id} currentKey={key} title={el.title} />}
+                        ></TabPane>
+                    ))}
+                </Tabs>
             </div>
         </>
     );

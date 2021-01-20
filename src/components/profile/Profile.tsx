@@ -2,8 +2,18 @@ import React from 'react';
 import { Typography, Col, Row, Input, Select } from 'antd';
 
 import OfficeSpace from './OfficeSpace';
-
 import './Profile.less';
+
+type CustomInputProps = {
+    title: string;
+};
+
+const CustomInput = ({ title }: CustomInputProps) => (
+    <div className="profile__item">
+        <Typography className="profile__item--label required">{title}</Typography>
+        <Input className="profile__item--input" />
+    </div>
+);
 
 const Profile: React.FC = () => {
     const { Title } = Typography;
@@ -16,23 +26,14 @@ const Profile: React.FC = () => {
             <div className="profile">
                 <Row gutter={16}>
                     <Col className="gutter-row p-0" span={8}>
-                        <div className="profile__item">
-                            <Typography className="profile__item--label required">
-                                Agency Name
-                            </Typography>
-                            <Input className="profile__item--input" />
-                        </div>
+                        <CustomInput title="Agency Name" />
                     </Col>
                     <Col className="gutter-row p-0" span={8}>
                         <div className="profile__item">
                             <Typography className="profile__item--label required">
                                 Agency Type
                             </Typography>
-                            <Select
-                                defaultValue="Agent"
-                                className="profile__item--input"
-                                style={{ width: '100%' }}
-                            >
+                            <Select defaultValue="Agent" className="profile__item--input w-full">
                                 <Option value="Sign Up">Agent</Option>
                                 <Option value="Sign In">Not agent</Option>
                             </Select>
@@ -43,85 +44,44 @@ const Profile: React.FC = () => {
                             <Typography className="profile__item--label required">
                                 Password
                             </Typography>
-                            <Select
-                                defaultValue=""
-                                className="profile__item--input"
-                                style={{ width: '100%' }}
-                            >
+                            <Select defaultValue="" className="profile__item--input w-full">
                                 <Option value="Sign Up">PW</Option>
                                 <Option value="Sign In">PW</Option>
                             </Select>
                         </div>
                     </Col>
                 </Row>
+
                 <Row gutter={16}>
                     <Col className="gutter-row p-0" span={8}>
-                        <div className="profile__item">
-                            <Typography className="profile__item--label required">
-                                Address
-                            </Typography>
-                            <Input className="profile__item--input" />
-                        </div>
+                        <CustomInput title="Address" />
                     </Col>
                     <Col className="gutter-row p-0" span={8}>
                         <div style={{ display: 'flex' }}>
-                            <div className="profile__item">
-                                <Typography className="profile__item--label required">
-                                    City
-                                </Typography>
-                                <Input className="profile__item--input" />
-                            </div>
-                            <div className="profile__item">
-                                <Typography className="profile__item--label required">
-                                    State
-                                </Typography>
-                                <Input className="profile__item--input" />
-                            </div>
+                            <CustomInput title="City" />
+                            <CustomInput title="State" />
                         </div>
                     </Col>
                     <Col className="gutter-row p-0" span={8}>
-                        <div className="profile__item">
-                            <Typography className="profile__item--label required">
-                                Telephone Number
-                            </Typography>
-                            <Input className="profile__item--input" />
-                        </div>
+                        <CustomInput title="Telephone Number" />
                     </Col>
                 </Row>
+
                 <Row gutter={16}>
                     <Col className="gutter-row p-0" span={8}>
-                        <div className="profile__item">
-                            <Typography className="profile__item--label required">
-                                Toll-Free Number
-                            </Typography>
-                            <Input className="profile__item--input" />
-                        </div>
+                        <CustomInput title="Toll-Free Number" />
                     </Col>
                     <Col className="gutter-row p-0" span={8}>
-                        <div className="profile__item">
-                            <Typography className="profile__item--label required">
-                                Email ID
-                            </Typography>
-                            <Input className="profile__item--input" />
-                        </div>
+                        <CustomInput title="Email ID" />
                     </Col>
                     <Col className="gutter-row p-0" span={8}>
-                        <div className="profile__item">
-                            <Typography className="profile__item--label required">
-                                Website
-                            </Typography>
-                            <Input className="profile__item--input" />
-                        </div>
+                        <CustomInput title="Website" />
                     </Col>
                 </Row>
+
                 <Row gutter={16}>
                     <Col className="gutter-row p-0" span={8}>
-                        <div className="profile__item">
-                            <Typography className="profile__item--label required">
-                                Company Name
-                            </Typography>
-                            <Input className="profile__item--input" />
-                        </div>
+                        <CustomInput title="Company Name" />
                     </Col>
                     <Col className="gutter-row p-0" span={8}>
                         <div className="profile__item">
