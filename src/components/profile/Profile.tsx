@@ -1,6 +1,8 @@
 import React from 'react';
 import { Typography, Col, Row, Input, Select } from 'antd';
 
+import OfficeSpace from './OfficeSpace';
+
 import './Profile.less';
 
 const Profile: React.FC = () => {
@@ -123,19 +125,7 @@ const Profile: React.FC = () => {
                     </Col>
                     <Col className="gutter-row p-0" span={8}>
                         <div className="profile__item">
-                            <Typography className="profile__item--label">Office Space</Typography>
-                            <div className="profile__item profile__item--box">
-                                <div className="box">
-                                    <input id="one" type="checkbox" />
-                                    <span className="check"></span>
-                                    <label htmlFor="one">Owned</label>
-                                </div>
-                                <div className="box">
-                                    <input id="two" type="checkbox" />
-                                    <span className="check"></span>
-                                    <label htmlFor="two">Rental</label>
-                                </div>
-                            </div>
+                            <OfficeSpace />
                         </div>
                     </Col>
                     <Col className="gutter-row p-0" span={8}>
@@ -143,14 +133,12 @@ const Profile: React.FC = () => {
                             <Typography className="profile__item--label required">
                                 Company Logo
                             </Typography>
-                            <div className="profile__item profile__item--box">
-                                <div className="upload-btn-wrapper">
-                                    <button className="btn">Upload a file</button>
-                                    <input type="file" name="myfile" />
-                                    <Typography className="profile__item--file">
-                                        No file choosen
-                                    </Typography>
-                                </div>
+                            <div className="upload">
+                                <button className="upload__btn">Upload a file</button>
+                                <input type="file" name="myfile" />
+                                <Typography className="profile__item--file">
+                                    No file choosen
+                                </Typography>
                             </div>
                         </div>
                     </Col>

@@ -21,22 +21,16 @@ const AgentRegistration: FC = () => {
                 <div className="details__item details__item__active">
                     <CheckCircleOutlined className="details__item--icon" />
                     <Title className="details__item--title" level={5}>
-                        Personal Details
+                        Agency Details
                     </Title>
                 </div>
                 <div className="details__item">
-                    <div className="box text-15">
-                        <input type="checkbox" disabled />
-                        <span className="check"></span>
-                        <label>contact Person Details</label>
-                    </div>
+                    <span className="details__item--circle">&#9675;</span>
+                    <label className="details__item--label">Person Details</label>
                 </div>
                 <div className="details__item">
-                    <div className="box text-15">
-                        <input type="checkbox" disabled />
-                        <span className="check"></span>
-                        <label>Work Order Scope</label>
-                    </div>
+                    <span className="details__item--circle">&#9675;</span>
+                    <label className="details__item--label">Work Order Scope</label>
                 </div>
             </div>
         </>
