@@ -1,0 +1,48 @@
+// main: ../../styles/index.less
+
+.footer {
+    padding: 2rem;
+    &__text {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #838383 !important;
+    }
+
+    &__actions {
+        width: 40%;
+        margin-left: auto;
+        display: flex;
+        justify-content: space-between;
+        text-align: right;
+        margin-top: 5rem;
+        font-size: 2rem;
+
+        &--cancel {
+            font-size: 1.5rem;
+            background: rgb(153, 153, 153);
+            width: 80%;
+            height: 60px;
+            margin-right: 1.5rem;
+            border: none;
+            border-radius: 10px;
+            text-transform: uppercase;
+            &:hover,
+            :active {
+                background: rgb(92, 92, 92);
+            }
+        }
+        &--continue {
+            border: none;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            background: #55bc7a;
+            width: 100%;
+            height: 60px;
+            border-radius: 10px;
+            &:hover,
+            :active {
+                background: rgb(1, 167, 1);
+            }
+        }
+    }
+}
